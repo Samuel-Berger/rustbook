@@ -27,3 +27,14 @@ rustfmt main.rs && rustc main.rs && ./main
 
 A macros i denoted by !. So `println!` calls a macro,
 and `println` calls a function.
+
+## Cargo
+
+In Rust, packages of code are referred to as crates.
+Cargo expects your source files to live inside the src directory.
+
+When creating a new crate a directory structure will be created
+and initiated with a git repository.
+
+Crete new: `cargo new hello_cargo`,
+build: `cargo build`
