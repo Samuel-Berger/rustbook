@@ -1,8 +1,16 @@
 use std::io; //Use something not in the Prelude.
+use std::cmp::Ordering;
+use rand::Rng; //Use random generator imported from Cargo.
 
 fn main() {
     println!("Guess the number");
-    println!("Please input your guess: ");
+
+    let secret_number = rand::thread_rng().gen_range(1, 101);
+
+    //println!("The secret number is: {}.", secret_number);
+
+    loop{
+    println!("Please input your guess between 1 and 100: ");
 
     //mut makes the variable mutable.
     //new creates a new instance of String.
@@ -14,6 +22,21 @@ fn main() {
         //so the method .expect can be used to handle the value.
         .expect("Failed to read line.");
 
-        println!("You guessed: {}", guess);
+        let guess: u32 = match guess.trim().parse(){
+            //.expect("Please type a number."); //Now correct error handling below:
+            Ok(num) => num,
+            Err(_) => continue,
+        };
 
+
+
+    match guess.cmp(&secret_number) {
+        Ordering::Less => println!("Too small!"),
+        Ordering::Greater => println!("Too big!"),
+        Ordering::Equal => {
+            println!("You win!");
+            break;
+        }
+    }
+}
 }

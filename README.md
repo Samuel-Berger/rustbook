@@ -38,6 +38,14 @@ When creating a new crate a directory structure will be created
 and initiated with a git repository.
 
 Crete new: `cargo new hello_cargo`; check: `cargo check`; build: `cargo build`;
-build for release: `cargo build --release`.
+build for release: `cargo build --release`; 
+build documentation provided by all of your dependencies locally and open it in your browser: `cargo doc --open`.
 
+### Loops
+
+```rust
+loop {
+    break;
+}
+```
 
