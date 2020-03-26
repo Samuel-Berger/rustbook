@@ -9,5 +9,5 @@ edition = "2018"
 [dependencies]
 
 #Use the rand crate with version 0.3.14.
-rand = "0.4.0"
-#rand = ""
+#rand = "0.4.0" #Original
+rand = "" 
