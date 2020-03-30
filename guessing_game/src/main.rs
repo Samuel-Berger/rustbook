@@ -7,10 +7,11 @@ fn main() {
     println!("Guess the number");
 
     let secret_number = rand::thread_rng().gen_range(1, 101);
+    let mut guesses = 5;
 
     //println!("The secret number is: {}.", secret_number);
 
-    loop{
+    while guesses > 0 {
         println!("Please input your guess between 1 and 100: ");
 
         //mut makes the variable mutable.
@@ -40,5 +41,7 @@ fn main() {
               break;
             }
         }
+        guesses = guesses - 1;
+        println!("You have {} guesses left.", guesses);
     }
 }
