@@ -7,6 +7,8 @@ See the book to adopt the notes for a Windows enviroment.
 [Learn Rust in Y minutes](https://learnxinyminutes.com/)
 is also a nice source for notes.
 
+
+https://doc.rust-lang.org/stable/rust-by-example/flow_control/if_let.html
 ## Installation and Maintainance of Rust
 
 Install and update path: `curl https://sh.rustup.rs -sSf | sh`
