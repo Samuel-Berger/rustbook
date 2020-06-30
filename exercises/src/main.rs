@@ -1,20 +1,16 @@
-//file:///home/ghwomb/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/ch03-05-control-flow.html#summary
+#![allow(dead_code)]
 
 fn main() {
-    //Chapter 3 file:///home/sabe/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/book/ch03-05-control-flow.html
+
+    /*
     f_to_c(56.0);
     c_to_f(23.0);
 
     fib_array(12);
     fib_array(3);
-
-    /*
-    println!("{},", fibbonaci_worker(0));
-    println!("{},", fibbonaci_worker(1));
-    println!("{},", fibbonaci_worker(2));
-    println!("{},", fibbonaci_worker(3));
-    println!("{},", fibbonaci_worker(4));
     */
+
+    twelve_days_of_christmas();
 }
 
 //Convert from Farenheit to Celsius.
@@ -62,3 +58,60 @@ fn fibbonaci_worker(n: u32) -> u32{
     }
 }
 
+
+//Can be re-written with tuple instead of two arrays.
+fn twelve_days_of_christmas(){
+    
+    let gifts = [
+        "And a partridge in a pear tree.",
+        "Two turtle doves",
+        "Three French hens",
+        "Four calling birds",
+        "Five gold rings",
+        "Six geese a laying",
+        "Seven swans a swimming",
+        "Eight maids a milking",
+        "Nine ladies dancing",
+        "Ten lords a leaping",
+        "Eleven pipers piping",
+        "Twelve drummers drumming"
+    ];
+
+    let days = [
+        "first",
+        "second",
+        "third",
+        "fourth",
+        "fifth",
+        "sixth",
+        "seventh",
+        "eighth",
+        "ninth",
+        "tenth",
+        "eleventh",
+        "twelfth"
+    ];
+
+    let mut day = 1;
+
+    while day < 13 {
+
+        println!("On the {} day of Christmas", days[day-1]);
+        println!("My true love gave to me");
+        
+        if day == 1{
+            println!("A partridge in a pear tree.");
+        }
+        
+        else{
+            let mut i = day;
+            while i > 0 {
+                println!("{}", gifts[i-1]);
+                i = i - 1;
+            }
+        }   
+        
+        println!();
+        day = day + 1;
+    }
+}
